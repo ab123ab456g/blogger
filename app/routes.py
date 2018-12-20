@@ -24,10 +24,8 @@ def user(username):
 def edit():
 	return render_template('edit_profile.html')
 
-@app.route('/500')
-def error_500():
-	return render_template('500.html')
+@app.route('/500', methods=['GET','POST'])
+def error_500(request):
+	if request.method == 'POST':
+		return render_template('500.html')
 
-@app.route('/404')
-def error_404():
-	return render_template('404.html')
