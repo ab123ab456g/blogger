@@ -1,5 +1,8 @@
 from flask import Flask
-from app import routes, models, error
+
 app = Flask(__name__)
 
+from app.config import Config
+from app import routes, models, errors
 
+app.config.from_object(Config)
